@@ -1,0 +1,55 @@
+@startuml
+class Auto
+class Moto
+Class Cilindrada
+class Camioneta
+Class CapacidadCarga
+class Vehiculo
+class Placa
+class Marca
+class Modelo
+class Fabricacion
+class Precio
+class Cliente
+class ID
+class Nombre
+class DNI
+class Telefono
+class Alquiler
+class Codigo
+class FechaInicio
+class FechaFin
+class Costo
+class Estado
+class Registro
+Auto --|> Vehiculo
+Moto --|> Vehiculo
+Camioneta --|> Vehiculo
+Vehiculo *-- Placa
+Vehiculo *-- Marca
+Vehiculo *-- Modelo
+Vehiculo *-- Fabricacion
+Vehiculo *-- Precio
+Cliente *-- ID
+Cliente *-- DNI
+Cliente *-- Nombre
+Cliente *-- Telefono
+Alquiler *-- Codigo
+Alquiler *-- FechaInicio
+Alquiler *-- FechaFin
+Alquiler *-- Costo
+Alquiler o-- Registro
+Alquiler "1" *-- "0,1" Estado
+Camioneta *-- CapacidadCarga
+Moto *-- Cilindrada
+Cliente "1" o-- "0..3" Alquiler
+Alquiler "1" o-- "*" Vehiculo
+class Registro{
++ Cliente : Agregar()
++ Vehiculo : Agregar()
++ Alquiler : Iniciar()
++ Alquilar : Finalizar()
++ Estados : Activo()
++ Estados : Inactivo()
+}
+@enduml
